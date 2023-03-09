@@ -1,4 +1,5 @@
-export default props => {
+// eslint-disable-next-line
+export default (props) => {
 
     const { min, max } = props;
 
