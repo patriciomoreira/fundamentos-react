@@ -1,6 +1,6 @@
-import Primeiro from './componentes/basicos/Primeiro'
-import ComParametro from './componentes/basicos/ComParametro'
-import Aleatorio from './componentes/Aleatorio'
+import Primeiro from './components/basicos/Primeiro'
+import ComParametro from './components/basicos/ComParametro'
+import Aleatorio from './components/Aleatorio'
 
 // eslint-disable-next-line
 export default _ =>
