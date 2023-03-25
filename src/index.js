@@ -23,7 +23,7 @@ ReactDOM.render(
 // Nova versão acima react v18
 import './index.css';
 
-import App from './app';
+import App from './App';
 
 
 import { createRoot } from 'react-dom/client';
