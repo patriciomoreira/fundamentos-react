@@ -21,13 +21,13 @@ ReactDOM.render(
 */
 
 // Nova versão acima react v18
-import './index.css';
-
-import App from './App';
-
 
 import { createRoot } from 'react-dom/client';
-const construtor = createRoot(document.getElementById('root'));
-construtor.render(
+import './index.css';
+import App from './App';
+
+// eslint-disable-next-line
+const root = createRoot(document.getElementById('root'));
+root.render(
     <App />
 );

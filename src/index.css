@@ -1,15 +1,40 @@
-body{
-    font-family: 'Golos Text', sans-serif;
-    font-family: 'Nunito', sans-serif;
-    text-align: center;
-    background-color: rgb(37, 7, 56);
-    color: white;
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 3px; /* A altura só é vista quando a rolagem é horizontal */
 }
 
-h1{
-    font-weight: 900;
+*::-webkit-scrollbar-track {
+	background: transparent;
+	padding: 2px;
 }
 
-h2, h3 {
-    font-weight: 600;
+*::-webkit-scrollbar-thumb {
+	background-color: #000;
+	border-radius: 5px;
+}
+
+body {
+	font-family: "Golos Text", sans-serif;
+	font-family: "Nunito", sans-serif;
+	text-align: center;
+	background-color: rgb(44, 44, 44);
+	color: white;
+}
+
+h1 {
+	font-weight: 900;
+}
+
+h2,
+h3 {
+	font-weight: 600;
+}
+
+ul {
+	list-style: none;
+	text-align: justify;
+}
+
+#titulo {
+	margin-top: 15px;
 }

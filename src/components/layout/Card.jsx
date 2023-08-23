@@ -9,8 +9,8 @@ export default props => {
     }
 
     return (
-        <div className="Card" style={cardStyle}>
-            <div className="Tittle">{props.titulo}</div>
+        <div className="Card overflow-auto" style={cardStyle}>
+            <div className="Tittle">{props.titulo || "#Card Sem Titulo"}</div>
             <div className="Content">{props.children}</div>
         </div>
     );
