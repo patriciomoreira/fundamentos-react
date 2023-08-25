@@ -10,12 +10,14 @@ function gerarNumeros(qtd) {
 
 	const numeros = Array(qtd)
 		.fill(0)
-		.reduce((acumulador, numAtual) => {
-			console.log(acumulador + numAtual);
-			return acumulador + numAtual;
-		}, 0);
+		.reduce((acumulador) => {
+			const numeroGerado = gerarNumeroNaoIncluido(1, 60, acumulador);
+			console.log([ ...acumulador, numeroGerado ] );
+			return [ ...acumulador , numeroGerado ] ;
+		}, [])
+		.sort((n1, n2) => n1 - n2);
 
 	return numeros;
 }
 
-console.log("Numeros: " + gerarNumeros(6));
+console.log("Numeros: " + gerarNumeros(3));
