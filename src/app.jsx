@@ -12,13 +12,18 @@ import DiretaPai from "./components/comunication/DiretaPai";
 import IndiretaPai from "./components/comunication/IndiretaPai";
 import Input from "./components/form/Input";
 import Contador from "./components/contador/Contador";
+import Mega from "./components/desafio_megasena/Mega";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (_) => (
 	<div id="app">
 		
 		<h1 id="titulo">Aprendendo </h1>
 
 		<div className="Cards">
+			<Card titulo="#12 - Mega Sena">
+				<Mega qtd={6}/>
+			</Card>
 
 			<Card titulo="#12 - Contador - Baseado em classe" color="#514A9D">
 				<Contador numeroInicial={1} passo={1}></Contador>
