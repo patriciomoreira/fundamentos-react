@@ -12,12 +12,17 @@ export default props => {
 			: aleatorio;
 	}
 	
-	function gerarNumeros(qtd) {
+	//gera array de [qtd] entre totalNums
+	function gerarNumeros(qtd, totalNums) {
+
+		if(qtd > totalNums) {
+			qtd = totalNums;
+		}
 	
 		const numeros = Array(qtd)
 			.fill(0)
 			.reduce((acumulador) => {
-				const numeroGerado = gerarNumeroNaoIncluido(1, qtd, acumulador);
+				const numeroGerado = gerarNumeroNaoIncluido(1, totalNums, acumulador);
 				return [ ...acumulador , numeroGerado ] ;
 			}, [])
 			.sort((n1, n2) => n1 - n2);
@@ -26,14 +31,16 @@ export default props => {
 	}
 	
 	
+	const totalNums = props.totalNums;
 	const [qtd, setQtd] = useState(props.qtd);
-	const [numeros, setNumeros] = useState(gerarNumeros(qtd));
+	const [numeros, setNumeros] = useState(gerarNumeros(qtd, totalNums));
 
 
 	return <div id="megasena" className="d-flex flex-wrap text-center">
 		<h3 className="m-3 w-100">L O T E R I A</h3>
+		<p></p>
 		{numeros.map((num, id) => <p key={id}className="bola d-inline rounded-circle bg-success p-3 mx-auto text-white">{("0" + num).slice(-2)}</p> ) }
-		<input className="mx-auto form-control d-block"type="number" onChange={event => setQtd(+event.target.value)}/>
-		<button className="btn btn-success mx-auto my-3" onClick={_=> setNumeros(gerarNumeros(qtd))}>Gerar Números</button>
+		<input className="mx-auto form-control d-block"type="number" min={1} max={totalNums} onChange={event => setQtd(+event.target.value)}/>
+		<button className="btn btn-success mx-auto my-3" onClick={_=> setNumeros(gerarNumeros(qtd, totalNums))}>Gerar Números</button>
 	</div>
 }
