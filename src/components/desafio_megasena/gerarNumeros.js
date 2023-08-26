@@ -11,8 +11,7 @@ function gerarNumeros(qtd) {
 	const numeros = Array(qtd)
 		.fill(0)
 		.reduce((acumulador) => {
-			const numeroGerado = gerarNumeroNaoIncluido(1, 60, acumulador);
-			console.log([ ...acumulador, numeroGerado ] );
+			const numeroGerado = gerarNumeroNaoIncluido(1, 60, acumulador);//se deixar 60 no lugar de qtd da bug 
 			return [ ...acumulador , numeroGerado ] ;
 		}, [])
 		.sort((n1, n2) => n1 - n2);
@@ -20,4 +19,4 @@ function gerarNumeros(qtd) {
 	return numeros;
 }
 
-console.log("Numeros: " + gerarNumeros(3));
+export default gerarNumeros;
